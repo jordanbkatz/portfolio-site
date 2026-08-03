@@ -90,24 +90,26 @@ export interface Project {
   slug: string;
   tagline: string;
   description: string;
-  tech: string[];
+  github: string;
+  demo: string;
   highlights: string[];
   image?: string;
 }
 
 export const projects: Project[] = [
   {
-    name: "Face Chess",
-    slug: "face-chess",
-    tagline: "Multiplayer chess with FaceTime-style video",
+    name: "Eisenhower Matrices",
+    slug: "eisenhower-matrices",
+    tagline: "Real-time priority planning",
     description:
-      "A real-time multiplayer chess platform with built-in WebRTC video and audio streams, so players can see each other's reactions and talk while they compete.",
-    tech: ["React", "TypeScript", "WebRTC", "Firebase", "Vite"],
+      "An Eisenhower Matrix app for prioritizing tasks by urgency and importance, featuring multiple boards, guest mode, and real-time sharing with teammates by email.",
+    github: "https://github.com/jordanbkatz/eisenhower-matrices",
+    demo: "https://eisenhower-matrices.jordankatz.dev",
     highlights: [
-      "Peer-to-peer WebRTC video/audio signaling through Firestore",
-      "Live match state, timers, and chess FEN sync",
+      "Real-time multi-user board collaboration",
+      "Guest mode with localStorage persistence",
     ],
-    image: "/projects/face-chess.png",
+    image: "/projects/eisenhower-matrices.png",
   },
   {
     name: "BeatWeaver",
@@ -115,7 +117,8 @@ export const projects: Project[] = [
     tagline: "Collaborative real-time audio sequencer",
     description:
       "A web-based DAW where multiple users join a shared room and build drum/synth loops together simultaneously. All audio is procedurally synthesized with the Web Audio API.",
-    tech: ["React", "TypeScript", "Web Audio API", "Firestore", "Cloud Functions"],
+    github: "https://github.com/jordanbkatz/beat-weaver",
+    demo: "https://beat-weaver.jordankatz.dev",
     highlights: [
       "Zero-asset procedural sound synthesis in the browser",
       "Real-time 16-step grid sync across peers with playhead alignment",
@@ -128,7 +131,8 @@ export const projects: Project[] = [
     tagline: "Collaborative multi-stop travel planner",
     description:
       "A group trip planner with drag-and-drop daily schedules, live friend cursors on the map, restaurant voting, and sidebar group chat in a Scandinavian travelogue aesthetic.",
-    tech: ["React", "TypeScript", "Leaflet", "Firebase", "Cloud Functions"],
+    github: "https://github.com/jordanbkatz/wayfarer-hub",
+    demo: "https://wayfarer-hub.jordankatz.dev",
     highlights: [
       "Live multi-cursor presence on an interactive Leaflet map",
       "Real-time collaborative itinerary editing and voting",
@@ -136,38 +140,27 @@ export const projects: Project[] = [
     image: "/projects/wayfarer-hub.png",
   },
   {
-    name: "Neon Tetris 3D",
-    slug: "neon-tetris-3d",
-    tagline: "A full 3D spatial puzzle game in WebGL",
+    name: "Face Chess",
+    slug: "face-chess",
+    tagline: "Multiplayer chess with FaceTime-style video",
     description:
-      "Tetris reimagined in three dimensions, featuring solid 3D polyomino bricks with pitch/yaw/roll rotation, camera-relative controls, and a live global leaderboard.",
-    tech: ["React", "TypeScript", "Three.js", "WebGL", "Firebase"],
+      "A real-time multiplayer chess platform with built-in WebRTC video and audio streams, so players can see each other's reactions and talk while they compete.",
+    github: "https://github.com/jordanbkatz/face-chess",
+    demo: "https://face-chess.jordankatz.dev",
     highlights: [
-      "Custom 3D rotation system with camera-relative movement",
-      "Trackpad panning, pinch zoom, and origin-rotation camera controls",
+      "Peer-to-peer WebRTC video/audio signaling through Firestore",
+      "Live match state, timers, and chess FEN sync",
     ],
-    image: "/projects/neon-tetris-3d.png",
+    image: "/projects/face-chess.png",
   },
   {
-    name: "Agora Debates",
-    slug: "agora-debates",
-    tagline: "Structured debate platform",
-    description:
-      "A platform designed to bring order to public discussion, using a visual Pro vs. Con layout and a reliability-weighted voting consensus system.",
-    tech: ["React", "TypeScript", "Firebase", "Cloud Functions", "Jest"],
-    highlights: [
-      "Reliability-weighted consensus voting algorithm",
-      "Nested argument/rebuttal threading with per-node votes",
-    ],
-    image: "/projects/agora-debates.png",
-  },
-  {
-    name: "ThriftFlip",
+    name: "Thrift Flip",
     slug: "thriftflip",
     tagline: "Real-time auction marketplace",
     description:
       "A fast-paced auction marketplace for upcycled and vintage fashion with real-time bidding rooms and automated countdowns, styled in a 90s neo-brutalist zine aesthetic.",
-    tech: ["React", "TypeScript", "Firebase", "Storage", "Cloud Functions"],
+    github: "https://github.com/jordanbkatz/thrift-flip",
+    demo: "https://thrift-flip.jordankatz.dev",
     highlights: [
       "Live bidding rooms with automated countdown settlement",
       "Image uploads and listing management via Firebase Storage",
@@ -175,12 +168,27 @@ export const projects: Project[] = [
     image: "/projects/thrift-flip.png",
   },
   {
+    name: "Agora Debates",
+    slug: "agora-debates",
+    tagline: "Structured debate platform",
+    description:
+      "A platform designed to bring order to public discussion, using a visual Pro vs. Con layout and a reliability-weighted voting consensus system.",
+    github: "https://github.com/jordanbkatz/agora-debates",
+    demo: "https://agora-debates.jordankatz.dev",
+    highlights: [
+      "Reliability-weighted consensus voting algorithm",
+      "Nested argument/rebuttal threading with per-node votes",
+    ],
+    image: "/projects/agora-debates.png",
+  },
+  {
     name: "Snippet Forge",
     slug: "snippet-forge",
     tagline: "Collaborative code sandbox",
     description:
       "A multi-user HTML/CSS/JS sandbox with live previews, per-field locking, presence, and server-side SCSS compilation and JS sanitization.",
-    tech: ["React", "TypeScript", "Prism", "Firebase", "Cloud Functions"],
+    github: "https://github.com/jordanbkatz/snippet-forge",
+    demo: "https://snippet-forge.jordankatz.dev",
     highlights: [
       "Cloud Functions that compile SCSS and sanitize JS for safe previews",
       "Field-level locks and live presence for multi-editor sessions",
@@ -188,17 +196,18 @@ export const projects: Project[] = [
     image: "/projects/snippet-forge.png",
   },
   {
-    name: "Eisenhower Matrices",
-    slug: "eisenhower-matrices",
-    tagline: "Real-time priority planning",
+    name: "Neon Tetris 3D",
+    slug: "neon-tetris-3d",
+    tagline: "A full 3D spatial puzzle game in WebGL",
     description:
-      "An Eisenhower Matrix app for prioritizing tasks by urgency and importance, featuring multiple boards, guest mode, and real-time sharing with teammates by email.",
-    tech: ["React", "TypeScript", "Firebase", "Vite", "Jest"],
+      "Tetris reimagined in three dimensions, featuring solid 3D polyomino bricks with pitch/yaw/roll rotation, camera-relative controls, and a live global leaderboard.",
+    github: "https://github.com/jordanbkatz/neon-tetris-3d",
+    demo: "https://neon-tetris-3d.jordankatz.dev",
     highlights: [
-      "Real-time multi-user board collaboration",
-      "Guest mode with localStorage persistence",
+      "Custom 3D rotation system with camera-relative movement",
+      "Trackpad panning, pinch zoom, and origin-rotation camera controls",
     ],
-    image: "/projects/eisenhower-matrices.png",
+    image: "/projects/neon-tetris-3d.png",
   },
   {
     name: "AlphabeType",
@@ -206,7 +215,8 @@ export const projects: Project[] = [
     tagline: "Alphabet speed-typing trainer",
     description:
       "A minimalist typing game that times how fast you can type the alphabet, with a global leaderboard, custom keybinds, and error-continuation mechanics.",
-    tech: ["React", "Firebase", "CSS"],
+    github: "https://github.com/jordanbkatz/alphabetype",
+    demo: "https://alphabetype.jordankatz.dev",
     highlights: [
       "Global leaderboard with Google auth and guest mode",
       "Fully customizable keybindings",

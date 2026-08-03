@@ -1,3 +1,4 @@
+import { ExternalLink, Github } from "lucide-react";
 import { projects, type Project } from "../data/content";
 import { Reveal } from "./Reveal";
 import { Section } from "./Section";
@@ -34,12 +35,25 @@ export function Projects() {
                 <h3>{project.name}</h3>
                 <div className="project-tagline">{project.tagline}</div>
                 <p className="project-desc">{project.description}</p>
-                <div className="project-tags">
-                  {project.tech.map((t) => (
-                    <span className="tag" key={t}>
-                      {t}
-                    </span>
-                  ))}
+                <div className="project-links">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn btn-sm project-link-btn"
+                  >
+                    <Github size={15} aria-hidden />
+                    <span>GitHub</span>
+                  </a>
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn btn-sm btn-primary project-link-btn"
+                  >
+                    <ExternalLink size={15} aria-hidden />
+                    <span>Live Demo</span>
+                  </a>
                 </div>
               </div>
             </article>

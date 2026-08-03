@@ -1018,21 +1018,21 @@
     overflow: hidden;
   }
 
-  .project-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-top: 0.4rem;
+  .btn-sm {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.8rem;
   }
 
-  .tag {
-    font-family: var(--font-mono);
-    font-size: 0.68rem;
-    padding: 0.2rem 0.55rem;
-    border: var(--border-width) solid var(--border);
-    border-radius: calc(var(--radius) + 10px);
-    color: var(--text-muted);
-    background: var(--bg);
+  .project-links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.6rem;
+  }
+
+  .project-link-btn {
+    flex: 1;
+    justify-content: center;
   }
 
   /* ---------- Skills ---------- */
