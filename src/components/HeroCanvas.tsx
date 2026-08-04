@@ -183,20 +183,6 @@ export function HeroCanvas({ theme }: HeroCanvasProps) {
       });
     });
 
-    // Particle field around mesh
-    const particleCount = 140;
-    const particlePositions: number[] = [];
-    for (let i = 0; i < particleCount; i++) {
-      const radius = 1.2 + Math.random() * 1.3;
-      const theta = Math.random() * Math.PI * 2;
-      const phiAngle = Math.acos(2 * Math.random() - 1);
-      particlePositions.push(
-        radius * Math.sin(phiAngle) * Math.cos(theta),
-        radius * Math.sin(phiAngle) * Math.sin(theta),
-        radius * Math.cos(phiAngle)
-      );
-    }
-
     const posBuffer = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, posBuffer);
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(outerVertices), gl.STATIC_DRAW);
@@ -208,10 +194,6 @@ export function HeroCanvas({ theme }: HeroCanvasProps) {
     const colorBuffer = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer);
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(outerColors), gl.STATIC_DRAW);
-
-    const particleBuffer = gl.createBuffer();
-    gl.bindBuffer(gl.ARRAY_BUFFER, particleBuffer);
-    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(particlePositions), gl.STATIC_DRAW);
 
     const createPerspective = (fov: number, aspect: number, near: number, far: number) => {
       const f = 1.0 / Math.tan(fov / 2);
@@ -297,17 +279,6 @@ export function HeroCanvas({ theme }: HeroCanvasProps) {
 
       // Draw Main Complex Mesh
       gl.drawArrays(gl.TRIANGLES, 0, outerVertices.length / 3);
-
-      // Draw Particle Dust Field
-      gl.bindBuffer(gl.ARRAY_BUFFER, particleBuffer);
-      gl.vertexAttribPointer(aPosition, 3, gl.FLOAT, false, 0, 0);
-      gl.disableVertexAttribArray(aNormal);
-
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      if (aPointSize !== -1) {
-        gl.vertexAttrib1f(aPointSize, 3.0 * dpr);
-      }
-      gl.drawArrays(gl.POINTS, 0, particleCount);
 
       animationFrameId = requestAnimationFrame(render);
     };
