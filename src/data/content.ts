@@ -130,7 +130,7 @@ export const projects: Project[] = [
     slug: "wayfarer-hub",
     tagline: "Collaborative multi-stop travel planner",
     description:
-      "A group trip planner with drag-and-drop daily schedules, live friend cursors on the map, restaurant voting, and sidebar group chat in a Scandinavian travelogue aesthetic.",
+      "A group trip planner featuring real-time venue search via OpenStreetMap's Nominatim API, drag-and-drop daily schedules, live friend cursors on the map, restaurant voting, and sidebar group chat in a Scandinavian travelogue aesthetic.",
     github: "https://github.com/jordanbkatz/wayfarer-hub",
     demo: "https://wayfarer-hub.jordankatz.dev",
     highlights: [
@@ -186,7 +186,7 @@ export const projects: Project[] = [
     slug: "snippet-forge",
     tagline: "Collaborative code sandbox",
     description:
-      "A multi-user HTML/CSS/JS sandbox with live previews, per-field locking, presence, and server-side SCSS compilation and JS sanitization.",
+      "A multi-user code sandbox supporting HTML, CSS/SCSS, JavaScript, SVG, and HTML5 Canvas with live synchronized previews, per-field locking, presence, and server-side compilation.",
     github: "https://github.com/jordanbkatz/snippet-forge",
     demo: "https://snippet-forge.jordankatz.dev",
     highlights: [

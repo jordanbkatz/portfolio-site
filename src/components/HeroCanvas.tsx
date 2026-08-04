@@ -38,6 +38,7 @@ export function HeroCanvas({ theme }: HeroCanvasProps) {
       attribute vec3 aPosition;
       attribute vec3 aNormal;
       attribute vec4 aColor;
+      attribute float aPointSize;
 
       uniform mat4 uModelViewMatrix;
       uniform mat4 uProjectionMatrix;
@@ -49,6 +50,7 @@ export function HeroCanvas({ theme }: HeroCanvasProps) {
       void main() {
         vec4 pos = uModelViewMatrix * vec4(aPosition, 1.0);
         gl_Position = uProjectionMatrix * pos;
+        gl_PointSize = aPointSize;
         vec3 normal = normalize(mat3(uModelViewMatrix) * aNormal);
         vNormal = normal;
         float diff = max(dot(normal, normalize(uLightDirection)), 0.35);
@@ -97,6 +99,7 @@ export function HeroCanvas({ theme }: HeroCanvasProps) {
     const aPosition = gl.getAttribLocation(program, "aPosition");
     const aNormal = gl.getAttribLocation(program, "aNormal");
     const aColor = gl.getAttribLocation(program, "aColor");
+    const aPointSize = gl.getAttribLocation(program, "aPointSize");
 
     const uModelViewMatrix = gl.getUniformLocation(program, "uModelViewMatrix");
     const uProjectionMatrix = gl.getUniformLocation(program, "uProjectionMatrix");
@@ -222,12 +225,16 @@ export function HeroCanvas({ theme }: HeroCanvasProps) {
     };
 
     const resize = () => {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
       width = canvas.clientWidth;
       height = canvas.clientHeight;
-      if (canvas.width !== width || canvas.height !== height) {
-        canvas.width = width;
-        canvas.height = height;
-        gl.viewport(0, 0, width, height);
+      const displayWidth = Math.floor(width * dpr);
+      const displayHeight = Math.floor(height * dpr);
+
+      if (canvas.width !== displayWidth || canvas.height !== displayHeight) {
+        canvas.width = displayWidth;
+        canvas.height = displayHeight;
+        gl.viewport(0, 0, displayWidth, displayHeight);
       }
     };
 
@@ -283,12 +290,23 @@ export function HeroCanvas({ theme }: HeroCanvasProps) {
       gl.vertexAttribPointer(aColor, 4, gl.FLOAT, false, 0, 0);
       gl.enableVertexAttribArray(aColor);
 
+      if (aPointSize !== -1) {
+        gl.vertexAttrib1f(aPointSize, 1.0);
+        gl.disableVertexAttribArray(aPointSize);
+      }
+
       // Draw Main Complex Mesh
       gl.drawArrays(gl.TRIANGLES, 0, outerVertices.length / 3);
 
       // Draw Particle Dust Field
       gl.bindBuffer(gl.ARRAY_BUFFER, particleBuffer);
       gl.vertexAttribPointer(aPosition, 3, gl.FLOAT, false, 0, 0);
+      gl.disableVertexAttribArray(aNormal);
+
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      if (aPointSize !== -1) {
+        gl.vertexAttrib1f(aPointSize, 3.0 * dpr);
+      }
       gl.drawArrays(gl.POINTS, 0, particleCount);
 
       animationFrameId = requestAnimationFrame(render);

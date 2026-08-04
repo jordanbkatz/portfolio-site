@@ -52,31 +52,30 @@ export function ThemeSwitcher({ theme, mode, onThemeChange, onModeToggle }: Them
           <span className="picker-label">{THEME_LABELS[theme]}</span>
           <ChevronDown size={14} className="chevron" aria-hidden />
         </button>
-        {open ? (
-          <div className="theme-menu" role="listbox" aria-label="Themes">
-            {THEMES.map((t) => (
-              <button
-                key={t}
-                type="button"
-                role="option"
-                aria-selected={t === theme}
-                aria-pressed={t === theme}
-                className="theme-option"
-                onClick={() => {
-                  onThemeChange(t);
-                  setOpen(false);
-                }}
-              >
-                <span
-                  className="swatch"
-                  style={{ "--sw-a": SWATCHES[t][0], "--sw-b": SWATCHES[t][1] } as React.CSSProperties}
-                  aria-hidden
-                />
-                {THEME_LABELS[t]}
-              </button>
-            ))}
-          </div>
-        ) : null}
+        <div className="theme-menu" role="listbox" aria-label="Themes" data-open={open}>
+          {THEMES.map((t, index) => (
+            <button
+              key={t}
+              type="button"
+              role="option"
+              aria-selected={t === theme}
+              aria-pressed={t === theme}
+              className="theme-option"
+              style={{ "--theme-idx": index } as React.CSSProperties}
+              onClick={() => {
+                onThemeChange(t);
+                setOpen(false);
+              }}
+            >
+              <span
+                className="swatch"
+                style={{ "--sw-a": SWATCHES[t][0], "--sw-b": SWATCHES[t][1] } as React.CSSProperties}
+                aria-hidden
+              />
+              {THEME_LABELS[t]}
+            </button>
+          ))}
+        </div>
       </div>
       <button
         type="button"

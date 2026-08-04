@@ -65,24 +65,23 @@ export function Header({ theme, mode, onThemeChange, onModeToggle }: HeaderProps
           </button>
         </div>
       </div>
-      {mobileOpen && (
-        <div className="mobile-dropdown">
-          <nav className="mobile-nav" aria-label="Mobile">
-            {NAV_ITEMS.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                onClick={(e) => {
-                  scrollToSection(e, item.href);
-                  setMobileOpen(false);
-                }}
-              >
-                {item.label}
-              </a>
-            ))}
-          </nav>
-        </div>
-      )}
+      <div className="mobile-dropdown" data-open={mobileOpen}>
+        <nav className="mobile-nav" aria-label="Mobile">
+          {NAV_ITEMS.map((item, index) => (
+            <a
+              key={item.href}
+              href={item.href}
+              style={{ "--nav-idx": index } as React.CSSProperties}
+              onClick={(e) => {
+                scrollToSection(e, item.href);
+                setMobileOpen(false);
+              }}
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
+      </div>
     </header>
   );
 }
