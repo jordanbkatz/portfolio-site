@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import type { Mode, Theme } from "../hooks/useTheme";
+import { useActiveSection } from "../hooks/useActiveSection";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 
 const NAV_ITEMS = [
@@ -12,6 +13,8 @@ const NAV_ITEMS = [
   { href: "#contact", label: "Contact" },
 ];
 
+const SECTION_IDS = NAV_ITEMS.map((item) => item.href.replace("#", ""));
+
 interface HeaderProps {
   theme: Theme;
   mode: Mode;
@@ -21,6 +24,7 @@ interface HeaderProps {
 
 export function Header({ theme, mode, onThemeChange, onModeToggle }: HeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const activeSection = useActiveSection(SECTION_IDS);
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
@@ -38,15 +42,21 @@ export function Header({ theme, mode, onThemeChange, onModeToggle }: HeaderProps
           Jordan Katz<span className="accent">.</span>
         </a>
         <nav className="nav desktop-nav" aria-label="Primary">
-          {NAV_ITEMS.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              onClick={(e) => scrollToSection(e, item.href)}
-            >
-              {item.label}
-            </a>
-          ))}
+          {NAV_ITEMS.map((item) => {
+            const id = item.href.replace("#", "");
+            const isActive = activeSection === id;
+            return (
+              <a
+                key={item.href}
+                href={item.href}
+                className={isActive ? "active" : ""}
+                aria-current={isActive ? "page" : undefined}
+                onClick={(e) => scrollToSection(e, item.href)}
+              >
+                {item.label}
+              </a>
+            );
+          })}
         </nav>
         <div className="header-controls">
           <ThemeSwitcher
@@ -67,19 +77,25 @@ export function Header({ theme, mode, onThemeChange, onModeToggle }: HeaderProps
       </div>
       <div className="mobile-dropdown" data-open={mobileOpen}>
         <nav className="mobile-nav" aria-label="Mobile">
-          {NAV_ITEMS.map((item, index) => (
-            <a
-              key={item.href}
-              href={item.href}
-              style={{ "--nav-idx": index } as React.CSSProperties}
-              onClick={(e) => {
-                scrollToSection(e, item.href);
-                setMobileOpen(false);
-              }}
-            >
-              {item.label}
-            </a>
-          ))}
+          {NAV_ITEMS.map((item, index) => {
+            const id = item.href.replace("#", "");
+            const isActive = activeSection === id;
+            return (
+              <a
+                key={item.href}
+                href={item.href}
+                className={isActive ? "active" : ""}
+                aria-current={isActive ? "page" : undefined}
+                style={{ "--nav-idx": index } as React.CSSProperties}
+                onClick={(e) => {
+                  scrollToSection(e, item.href);
+                  setMobileOpen(false);
+                }}
+              >
+                {item.label}
+              </a>
+            );
+          })}
         </nav>
       </div>
     </header>

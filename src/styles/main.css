@@ -210,6 +210,10 @@
     transform: translateY(-1px);
   }
 
+  .nav a.active {
+    color: var(--accent);
+  }
+
   .nav a:hover::before {
     opacity: 1;
     transform: scale(1);
@@ -263,17 +267,48 @@
   }
 
   .mobile-nav a {
+    position: relative;
     text-decoration: none;
     font-size: 1rem;
     font-weight: 600;
     color: var(--text);
-    padding-block: 0.35rem;
+    padding: 0.4rem 0.65rem;
+    border-radius: var(--radius);
+    display: inline-block;
+    width: fit-content;
     opacity: 0;
     transform: translateY(-8px);
     transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
       transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-      color 0.2s ease;
+      color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     transition-delay: calc(var(--nav-idx, 0) * 0.07s);
+  }
+
+  .mobile-nav a::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: color-mix(in srgb, var(--accent) 12%, transparent);
+    opacity: 0;
+    transform: scale(0.92);
+    transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1), transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+  }
+
+  .mobile-nav a::after {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    left: 0.65rem;
+    right: 0.65rem;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 2px;
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .mobile-dropdown[data-open="true"] .mobile-nav a {
@@ -283,6 +318,21 @@
 
   .mobile-nav a:hover {
     color: var(--accent);
+    transform: translateY(-1px);
+  }
+
+  .mobile-nav a.active {
+    color: var(--accent);
+  }
+
+  .mobile-nav a:hover::before {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .mobile-nav a:hover::after {
+    opacity: 1;
+    transform: scaleX(1);
   }
 
   .icon-btn {
