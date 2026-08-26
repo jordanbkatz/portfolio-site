@@ -1,11 +1,25 @@
 import type { ComponentType, CSSProperties } from "react";
-import { Cable, Cloud, CloudCog, Workflow } from "lucide-react";
+import {
+  Bot,
+  Cable,
+  Chrome,
+  Clock,
+  Cloud,
+  CloudCog,
+  Database,
+  Globe,
+  Radio,
+  Send,
+  Workflow,
+  Zap,
+} from "lucide-react";
 import {
   SiAngular,
   SiCloudflare,
   SiDocker,
   SiExpress,
   SiFirebase,
+  SiFlutter,
   SiGit,
   SiGithub,
   SiGitlab,
@@ -13,12 +27,15 @@ import {
   SiJavascript,
   SiJest,
   SiKubernetes,
+  SiMailchimp,
   SiMongodb,
   SiN8N,
   SiNetlify,
   SiNextdotjs,
   SiNodedotjs,
+  SiPostcss,
   SiPostgresql,
+  SiPuppeteer,
   SiPython,
   SiReact,
   SiTailwindcss,
@@ -26,7 +43,23 @@ import {
   SiVercel,
   SiVite,
   SiVuedotjs,
+  SiZapier,
 } from "react-icons/si";
+
+function PlaywrightLogo({ size = 13, style }: { size?: number; style?: CSSProperties; className?: string }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      style={style}
+      aria-hidden
+    >
+      <path d="M17.65 3.32a4.42 4.42 0 0 0-4.32 3.65 4.3 4.3 0 0 0-2.67-.93 4.41 4.41 0 0 0-4.41 4.41c0 .48.08.95.23 1.38a4.4 4.4 0 0 0-2.48 3.92c0 2.44 1.98 4.42 4.42 4.42 1.48 0 2.8-.73 3.61-1.85.74.8 1.78 1.3 2.94 1.3 2.22 0 4.02-1.8 4.02-4.02 0-.25-.03-.49-.07-.73 1.62-.64 2.78-2.22 2.78-4.07 0-2.44-1.98-4.42-4.42-4.42l-.34.03a4.34 4.34 0 0 0 .68-2.31c0-2.44-1.98-4.42-4.42-4.42-.18 0-.36.01-.53.04.14-.35.22-.72.22-1.12 0-1.8-1.46-3.26-3.26-3.26zM7.5 13.5a2.5 2.5 0 1 1 5 0 2.5 2.5 0 0 1-5 0zm9-4a2.5 2.5 0 1 1 5 0 2.5 2.5 0 0 1-5 0z" />
+    </svg>
+  );
+}
 
 function SvelteLogo({ size = 13, style }: { size?: number; style?: CSSProperties; className?: string }) {
   return (
@@ -49,6 +82,20 @@ interface IconConfig {
 }
 
 const ICONS: Record<string, IconConfig> = {
+  smartlead: { icon: Send, color: "#6366F1" },
+  mailchimp: { icon: SiMailchimp, color: "#FFE01B" },
+  chrome: { icon: Chrome, color: "#4285F4" },
+  webhooks: { icon: Radio, color: "#EC4899" },
+  scraping: { icon: Globe, color: "#10B981" },
+  pipeline: { icon: Zap, color: "#F59E0B" },
+  database: { icon: Database, color: "#3B82F6" },
+  bot: { icon: Bot, color: "#8B5CF6" },
+  playwright: { icon: PlaywrightLogo, color: "#2EAD33" },
+  zapier: { icon: SiZapier, color: "#FF4A00" },
+  puppeteer: { icon: SiPuppeteer, color: "#00D8A2" },
+  cron: { icon: Clock, color: "#F59E0B" },
+  flutter: { icon: SiFlutter, color: "#02569B" },
+  postcss: { icon: SiPostcss, color: "#DD3A0A" },
   react: { icon: SiReact, color: "#61DAFB" },
   vue: { icon: SiVuedotjs, color: "#4FC08D" },
   angular: { icon: SiAngular, color: "#DD0031" },

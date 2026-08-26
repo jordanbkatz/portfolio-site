@@ -6,9 +6,10 @@ import { ThemeSwitcher } from "./ThemeSwitcher";
 
 const NAV_ITEMS = [
   { href: "#experience", label: "Experience" },
-  { href: "#business", label: "Agency" },
   { href: "#projects", label: "Projects" },
-  { href: "#skills", label: "Skills" },
+  { href: "#business", label: "Agency" },
+  { href: "#automation", label: "Automation" },
+  { href: "#skills", label: "Tools" },
   { href: "#about", label: "About" },
   { href: "#contact", label: "Contact" },
 ];

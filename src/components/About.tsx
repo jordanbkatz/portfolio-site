@@ -4,15 +4,12 @@ import {
   Dumbbell,
   FileText,
   Gamepad,
-  Mail,
-  MapPin,
   MountainSnow,
   Newspaper,
-  Phone,
   Sprout,
 } from "lucide-react";
 import type { ComponentType } from "react";
-import { about, profile } from "../data/content";
+import { about } from "../data/content";
 import { Reveal } from "./Reveal";
 import { Section } from "./Section";
 
@@ -38,38 +35,6 @@ export function About() {
               ))}
             </div>
 
-            <div className="about-meta-grid">
-              <div className="about-meta-item">
-                <MapPin size={16} className="meta-icon" aria-hidden />
-                <div>
-                  <span className="meta-lbl">Location</span>
-                  <span className="meta-val">Westport, CT</span>
-                </div>
-              </div>
-              <div className="about-meta-item">
-                <Phone size={16} className="meta-icon" aria-hidden />
-                <div>
-                  <span className="meta-lbl">Phone</span>
-                  <span className="meta-val">
-                    <a href={`tel:${profile.phone.replace(/[^0-9+]/g, "")}`} style={{ textDecoration: "none" }}>
-                      {profile.phone}
-                    </a>
-                  </span>
-                </div>
-              </div>
-              <div className="about-meta-item">
-                <Mail size={16} className="meta-icon" aria-hidden />
-                <div>
-                  <span className="meta-lbl">Email</span>
-                  <span className="meta-val">
-                    <a href={`mailto:${profile.email}`} style={{ textDecoration: "none" }}>
-                      {profile.email}
-                    </a>
-                  </span>
-                </div>
-              </div>
-            </div>
-
             <div className="about-actions">
               <a
                 className="btn btn-primary resume-btn"
@@ -93,7 +58,7 @@ export function About() {
             />
             <div className="photo-badge">
               <span className="badge-title">Jordan Katz</span>
-              <span className="badge-sub">Full-Stack Engineer & Agency Founder</span>
+              <span className="badge-sub">Software & Automation Engineer</span>
             </div>
           </div>
         </Reveal>

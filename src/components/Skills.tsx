@@ -1,4 +1,4 @@
-import { Cloud, Layout, Server } from "lucide-react";
+import { Cloud, Cpu, Layout, Server } from "lucide-react";
 import { skills } from "../data/content";
 import { Reveal } from "./Reveal";
 import { Section } from "./Section";
@@ -8,13 +8,14 @@ const ICONS: Record<string, typeof Layout> = {
   Frontend: Layout,
   Backend: Server,
   Deployment: Cloud,
+  Automation: Cpu,
 };
 
 export function Skills() {
   return (
     <Section
       id="skills"
-      kicker="Skills"
+      kicker="Tools"
       title="My toolbox"
       sub="Technologies I reach for to take products from idea to production."
     >
@@ -30,9 +31,16 @@ export function Skills() {
                 </h3>
                 <div className="chip-row">
                   {group.items.map((item) => (
-                    <span className="chip" key={item.name}>
+                    <a
+                      className="chip"
+                      key={item.name}
+                      href={item.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`Official website for ${item.name}`}
+                    >
                       <SkillIcon name={item.icon} /> {item.name}
-                    </span>
+                    </a>
                   ))}
                 </div>
               </div>

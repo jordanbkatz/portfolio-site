@@ -1,11 +1,12 @@
-import { ArrowUp, Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowUp, Github, Linkedin, Mail, MapPin } from "lucide-react";
 import { profile } from "../data/content";
 
 const FOOTER_NAV = [
   { href: "#experience", label: "Experience" },
-  { href: "#business", label: "Agency" },
   { href: "#projects", label: "Projects" },
-  { href: "#skills", label: "Skills" },
+  { href: "#business", label: "Agency" },
+  { href: "#automation", label: "Automation" },
+  { href: "#skills", label: "Tools" },
   { href: "#about", label: "About" },
   { href: "#contact", label: "Contact" },
 ];
@@ -33,8 +34,8 @@ export function Footer() {
               Jordan Katz<span className="accent">.</span>
             </a>
             <p>
-              Full-stack software engineer, founder of Katz Web Solutions LLC, and a builder of
-              modern digital products and platforms.
+              Software & automation engineer, founder of Katz Web Solutions LLC, and builder of
+              high-performance digital platforms and intelligent automated workflows.
             </p>
             <div className="footer-socials">
               <a href={profile.github} target="_blank" rel="noreferrer" aria-label="GitHub">
@@ -45,9 +46,6 @@ export function Footer() {
               </a>
               <a href={`mailto:${profile.email}`} aria-label="Email me">
                 <Mail size={17} aria-hidden />
-              </a>
-              <a href={`tel:${profile.phone.replace(/[^0-9+]/g, "")}`} aria-label="Call me">
-                <Phone size={17} aria-hidden />
               </a>
             </div>
           </div>
@@ -69,8 +67,13 @@ export function Footer() {
             <a className="footer-link" href={`mailto:${profile.email}`}>
               <Mail size={14} aria-hidden /> {profile.email}
             </a>
-            <a className="footer-link" href={`tel:${profile.phone.replace(/[^0-9+]/g, "")}`}>
-              <Phone size={14} aria-hidden /> {profile.phone}
+            <a
+              className="footer-link"
+              href={profile.linkedin}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Linkedin size={14} aria-hidden /> LinkedIn
             </a>
             <span className="footer-link footer-muted">
               <MapPin size={14} aria-hidden /> {profile.location}

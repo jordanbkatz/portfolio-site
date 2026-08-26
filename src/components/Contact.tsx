@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { FormEvent } from "react";
-import { Check, Github, Linkedin, Mail, Phone, Send } from "lucide-react";
+import { Check, Send } from "lucide-react";
 import { profile } from "../data/content";
 import { Reveal } from "./Reveal";
 import { Section } from "./Section";
@@ -76,21 +76,6 @@ export function Contact() {
               </p>
             ) : null}
           </form>
-          <div className="contact-links">
-            <a className="btn" href={`tel:${profile.phone.replace(/[^0-9+]/g, "")}`}>
-              <Phone size={15} aria-hidden /> {profile.phone}
-            </a>
-            <a className="btn" href={`mailto:${profile.email}`}>
-              <Mail size={15} aria-hidden /> Email me
-            </a>
-            <a className="btn" href={profile.github} target="_blank" rel="noreferrer">
-              <Github size={15} aria-hidden /> GitHub
-            </a>
-            <a className="btn" href={profile.linkedin} target="_blank" rel="noreferrer">
-              <Linkedin size={15} aria-hidden /> LinkedIn
-            </a>
-          </div>
-          {/* Location line removed as requested */}
         </div>
       </Reveal>
     </Section>

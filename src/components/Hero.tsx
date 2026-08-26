@@ -22,7 +22,7 @@ export function Hero({ theme }: HeroProps) {
         <div className="hero-grid">
           <div className="hero-content">
             <p className="hero-kicker">
-              {profile.role} · {profile.location}
+              {profile.role}
             </p>
             <h1 className="hero-title">
               Hi, I'm <span className="accent">Jordan Katz</span>.

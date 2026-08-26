@@ -1,6 +1,8 @@
+import type React from "react";
+
 export const profile = {
   name: "Jordan Katz",
-  role: "Full-Stack Software Engineer",
+  role: "Software & Automation Engineer",
   location: "Westport, CT",
   email: "me@jordankatz.dev",
   phone: "(203) 917-5930",
@@ -8,7 +10,7 @@ export const profile = {
   github: "https://github.com/jordanbkatz",
   linkedin: "https://linkedin.com/in/jordan-b-katz",
   tagline:
-    "Full-stack engineer and agency founder building high-performance web applications, real-time interactive systems, and modern digital experiences.",
+    "Building full-stack digital architectures, resilient automation systems, and leveraging frontier technologies to keep businesses ahead of the curve.",
 };
 
 export interface ExperienceItem {
@@ -225,14 +227,69 @@ export const projects: Project[] = [
   },
 ];
 
+export interface AutomationFeature {
+  title: string;
+  category: string;
+  tagline: string;
+  description: React.ReactNode;
+  icon: string;
+  points: string[];
+}
+
+export const automation = {
+  heading: "Engineered for Efficiency",
+  sub: "Designing robust systems that eliminate manual bottlenecks, aggregate critical data, and drive business growth autonomously.",
+  capabilities: [
+    {
+      title: "Web Scraping & Lead Generation",
+      category: "",
+      tagline: "",
+      description:
+        "Engineered end-to-end web scraping architectures and automated extraction pipelines purpose-built for business intelligence and lead generation. From scheduled crawlers that ingest unstructured web data into clean databases to custom tools and browser extensions that crawl target website lists to automatically extract verified contact details and lead metadata.",
+      icon: "database",
+      points: [
+        "Automated extraction of high-intent market and lead data into structured databases or spreadsheet platforms",
+        "Scheduled crawler syncs, webhook dispatching, and automated lead enrichment data pipelines",
+        "Resilient browser automation architectures featuring dynamic DOM parsing, proxy rotation, and anti-bot evasions",
+      ],
+    },
+    {
+      title: "Outreach & Communication Systems",
+      category: "",
+      tagline: "",
+      description:
+        "Developing scalable outbound and customer engagement engines that automate outreach, capture leads from form submissions, and maintain clean bi-directional sync with CRMs. Specializing in high-deliverability cold email campaign infrastructure, automated marketing newsletters, and real-time response routing.",
+      icon: "email",
+      points: [
+        "Multi-inbox cold email campaign architecture, automated warmup, and deliverability monitoring",
+        "Automated inbound lead capture, instant form submission triggers, and audience segmentation",
+        "Real-time bi-directional customer sync and pipeline updates across leading CRM platforms",
+      ],
+    },
+    {
+      title: "Custom Business & Operational Workflows",
+      category: "",
+      tagline: "",
+      description:
+        "Designing custom automated back-office workflows that eliminate tedious, repetitive manual tasks so teams can focus on high-impact strategic work. Handling end-to-end client onboarding, automated invoice generation, document parsing, asynchronous event handling, and instant system notifications.",
+      icon: "zap",
+      points: [
+        "Custom automated workflows that eliminate recurring administrative overhead and human error",
+        "Automated client onboarding, dynamic contract generation, and scheduled billing routines",
+        "Multi-branch event routing, asynchronous queue management, and automated error recovery alerts",
+      ],
+    },
+  ],
+};
+
 export const about = {
   heading: "My Story",
-  sub: "Full-stack engineer, agency founder, and builder of modern digital products.",
+  sub: "Software & automation engineer, agency founder, and builder of modern digital products.",
   headshot: "/images/headshot.jpg",
   paragraphs: [
-    "My journey as a software developer began while I was attending Staples High School, driven by a deep curiosity for building systems and solving real-world problems. When I was starting out, I was fully self-taught and highly ambitious, teaching myself how to read documentation to learn new tools and technologies on demand. Some of my earliest projects included building an automated forex trading bot in MQL4, creating a meme-based social media platform using PHP and MySQL, and engineering a sports prediction machine learning algorithm in Python (yes, I was doing AI before ChatGPT!).",
-    "Those early projects sparked a lifelong passion for software engineering across every layer of the stack, spanning responsive frontend architectures, interactive UI platforms, high-performance microservices, automated pipelines, and custom client solutions.",
-    "Today, alongside engineering full-stack applications, I run my own web development agency, Katz Web Solutions LLC. When I'm not coding, I enjoy strength training, hiking, reading, and following the latest developments in tech and AI.",
+    "My journey began while I was attending Staples High School, driven by a deep curiosity for building systems and solving real-world problems. When I was starting out, I was fully self-taught and highly ambitious, teaching myself how to read documentation to master new tools and technologies on demand. Some of my earliest projects included building an automated forex trading bot in MQL4, creating a meme-based social media platform using PHP and MySQL, and engineering a sports prediction machine learning algorithm in Python (yes, I was doing AI before ChatGPT!).",
+    "Those early projects sparked a lifelong passion for software and automation engineering across every layer of the stack—from responsive frontend architectures and interactive UI platforms to high-performance microservices, automated data pipelines, custom web scrapers, and automated business workflows.",
+    "Today, alongside engineering full-stack applications and automated workflow systems, I run my own web development agency, Katz Web Solutions LLC. Fundamentally, I view myself as a technologist, which is why I am always trying to stay educated on the frontier of tech so I can utilize it to improve both my work and personal life.",
   ],
   interests: [
     {
@@ -271,51 +328,66 @@ export const about = {
 export interface Skill {
   name: string;
   icon: string;
+  url: string;
 }
 
 export const skills: { category: string; items: Skill[] }[] = [
   {
     category: "Frontend",
     items: [
-      { name: "React", icon: "react" },
-      { name: "Vue", icon: "vue" },
-      { name: "Angular", icon: "angular" },
-      { name: "Next.js", icon: "nextjs" },
-      { name: "Svelte", icon: "svelte" },
-      { name: "JavaScript", icon: "javascript" },
-      { name: "TypeScript", icon: "typescript" },
-      { name: "Tailwind CSS", icon: "tailwind" },
-      { name: "Jest", icon: "jest" },
-      { name: "Vite", icon: "vite" },
+      { name: "React", icon: "react", url: "https://react.dev" },
+      { name: "Vue", icon: "vue", url: "https://vuejs.org" },
+      { name: "Angular", icon: "angular", url: "https://angular.dev" },
+      { name: "Svelte", icon: "svelte", url: "https://svelte.dev" },
+      { name: "JavaScript", icon: "javascript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+      { name: "TypeScript", icon: "typescript", url: "https://www.typescriptlang.org" },
+      { name: "Tailwind CSS", icon: "tailwind", url: "https://tailwindcss.com" },
+      { name: "PostCSS", icon: "postcss", url: "https://postcss.org" },
+      { name: "Jest", icon: "jest", url: "https://jestjs.io" },
+      { name: "Vite", icon: "vite", url: "https://vite.dev" },
     ],
   },
   {
     category: "Backend",
     items: [
-      { name: "Node.js", icon: "node" },
-      { name: "Express.js", icon: "express" },
-      { name: "Python", icon: "python" },
-      { name: "REST APIs", icon: "rest" },
-      { name: "GraphQL", icon: "graphql" },
-      { name: "n8n", icon: "n8n" },
-      { name: "Firebase", icon: "firebase" },
-      { name: "PostgreSQL", icon: "postgresql" },
-      { name: "MongoDB", icon: "mongodb" },
+      { name: "Next.js", icon: "nextjs", url: "https://nextjs.org" },
+      { name: "Node.js", icon: "node", url: "https://nodejs.org" },
+      { name: "Express.js", icon: "express", url: "https://expressjs.com" },
+      { name: "Flutter", icon: "flutter", url: "https://flutter.dev" },
+      { name: "REST APIs", icon: "rest", url: "https://en.wikipedia.org/wiki/REST" },
+      { name: "GraphQL", icon: "graphql", url: "https://graphql.org" },
+      { name: "Firebase", icon: "firebase", url: "https://firebase.google.com" },
+      { name: "PostgreSQL", icon: "postgresql", url: "https://www.postgresql.org" },
+      { name: "MongoDB", icon: "mongodb", url: "https://www.mongodb.com" },
     ],
   },
   {
     category: "Deployment",
     items: [
-      { name: "Git", icon: "git" },
-      { name: "GitHub", icon: "github" },
-      { name: "GitLab", icon: "gitlab" },
-      { name: "Docker", icon: "docker" },
-      { name: "Kubernetes", icon: "kubernetes" },
-      { name: "Cloudflare", icon: "cloudflare" },
-      { name: "Vercel", icon: "vercel" },
-      { name: "GCP", icon: "gcp" },
-      { name: "AWS", icon: "aws" },
-      { name: "CI/CD", icon: "cicd" },
+      { name: "Git", icon: "git", url: "https://git-scm.com" },
+      { name: "GitHub", icon: "github", url: "https://github.com" },
+      { name: "GitLab", icon: "gitlab", url: "https://about.gitlab.com" },
+      { name: "Docker", icon: "docker", url: "https://www.docker.com" },
+      { name: "Kubernetes", icon: "kubernetes", url: "https://kubernetes.io" },
+      { name: "Cloudflare", icon: "cloudflare", url: "https://www.cloudflare.com" },
+      { name: "Vercel", icon: "vercel", url: "https://vercel.com" },
+      { name: "GCP", icon: "gcp", url: "https://cloud.google.com" },
+      { name: "AWS", icon: "aws", url: "https://aws.amazon.com" },
+      { name: "CI/CD", icon: "cicd", url: "https://en.wikipedia.org/wiki/CI/CD" },
+    ],
+  },
+  {
+    category: "Automation",
+    items: [
+      { name: "n8n", icon: "n8n", url: "https://n8n.io" },
+      { name: "Zapier", icon: "zapier", url: "https://zapier.com" },
+      { name: "Python", icon: "python", url: "https://www.python.org" },
+      { name: "Puppeteer", icon: "puppeteer", url: "https://pptr.dev" },
+      { name: "Cron Jobs", icon: "cron", url: "https://en.wikipedia.org/wiki/Cron" },
+      { name: "Webhooks", icon: "webhooks", url: "https://en.wikipedia.org/wiki/Webhook" },
+      { name: "Web Scraping", icon: "scraping", url: "https://en.wikipedia.org/wiki/Web_scraping" },
+      { name: "Mailchimp", icon: "mailchimp", url: "https://mailchimp.com" },
+      { name: "Smartlead", icon: "smartlead", url: "https://smartlead.ai" },
     ],
   },
 ];

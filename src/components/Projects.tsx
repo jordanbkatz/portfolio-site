@@ -24,7 +24,7 @@ export function Projects() {
       id="projects"
       kicker="Selected Projects"
       title="Things I've built"
-      sub="Production-level web apps spanning real-time collaboration, WebRTC, WebGL, Web Audio, and marketplaces."
+      sub="Production-level web apps featuring real-time collaboration, live database functionality, and modern browser API integrations such as WebRTC and WebGL."
     >
       <div className="projects-grid">
         {projects.map((project) => (
