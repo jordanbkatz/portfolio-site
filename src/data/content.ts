@@ -10,7 +10,7 @@ export const profile = {
   github: "https://github.com/jordanbkatz",
   linkedin: "https://linkedin.com/in/jordan-b-katz",
   tagline:
-    "Building full-stack digital architectures, resilient automation systems, and leveraging frontier technologies to keep businesses ahead of the curve.",
+    "Building full-stack web applications, resilient automation systems, and leveraging frontier technologies to keep businesses ahead of the curve.",
 };
 
 export interface ExperienceItem {
@@ -254,19 +254,6 @@ export const automation = {
       ],
     },
     {
-      title: "Outreach & Communication Systems",
-      category: "",
-      tagline: "",
-      description:
-        "Developing scalable outbound and customer engagement engines that automate outreach, capture leads from form submissions, and maintain clean bi-directional sync with CRMs. Specializing in high-deliverability cold email campaign infrastructure, automated marketing newsletters, and real-time response routing.",
-      icon: "email",
-      points: [
-        "Multi-inbox cold email campaign architecture, automated warmup, and deliverability monitoring",
-        "Automated inbound lead capture, instant form submission triggers, and audience segmentation",
-        "Real-time bi-directional customer sync and pipeline updates across leading CRM platforms",
-      ],
-    },
-    {
       title: "Custom Business & Operational Workflows",
       category: "",
       tagline: "",
@@ -279,6 +266,19 @@ export const automation = {
         "Multi-branch event routing, asynchronous queue management, and automated error recovery alerts",
       ],
     },
+    {
+      title: "Outreach & Communication Systems",
+      category: "",
+      tagline: "",
+      description:
+        "Developing scalable outbound and customer engagement engines that automate outreach, capture leads from form submissions, and maintain clean bi-directional sync with CRMs. Specializing in high-deliverability cold email campaign infrastructure, automated marketing newsletters, and real-time response routing.",
+      icon: "email",
+      points: [
+        "Multi-inbox cold email campaign architecture, automated warmup, and deliverability monitoring",
+        "Automated inbound lead capture, instant form submission triggers, and audience segmentation",
+        "Real-time bi-directional customer sync and pipeline updates across leading CRM platforms",
+      ],
+    },
   ],
 };
 
@@ -289,7 +289,7 @@ export const about = {
   paragraphs: [
     "My journey began while I was attending Staples High School, driven by a deep curiosity for building systems and solving real-world problems. When I was starting out, I was fully self-taught and highly ambitious, teaching myself how to read documentation to master new tools and technologies on demand. Some of my earliest projects included building an automated forex trading bot in MQL4, creating a meme-based social media platform using PHP and MySQL, and engineering a sports prediction machine learning algorithm in Python (yes, I was doing AI before ChatGPT!).",
     "Those early projects sparked a lifelong passion for software and automation engineering across every layer of the stack—from responsive frontend architectures and interactive UI platforms to high-performance microservices, automated data pipelines, custom web scrapers, and automated business workflows.",
-    "Today, alongside engineering full-stack applications and automated workflow systems, I run my own web development agency, Katz Web Solutions LLC. Fundamentally, I view myself as a technologist, which is why I am always trying to stay educated on the frontier of tech so I can utilize it to improve both my work and personal life.",
+    "Today, alongside engineering full-stack applications and automated workflow systems, I run my own web development agency, Katz Web Solutions LLC. At my core, I am a technologist driven to stay at the frontier of innovation, leveraging cutting-edge tools to elevate both my professional work and daily life.",
   ],
   interests: [
     {
