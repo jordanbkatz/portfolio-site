@@ -289,7 +289,7 @@ export const about = {
   paragraphs: [
     "My journey began while I was attending Staples High School, driven by a deep curiosity for building systems and solving real-world problems. When I was starting out, I was fully self-taught and highly ambitious, teaching myself how to read documentation to master new tools and technologies on demand. Some of my earliest projects included building an automated forex trading bot in MQL4, creating a meme-based social media platform using PHP and MySQL, and engineering a professional sports game outcome prediction model using PyTorch.",
     "Those early projects sparked a lifelong passion for software and automation engineering across every layer of the stack; from responsive frontend architectures and interactive UI platforms to high-performance microservices, automated data pipelines, custom web scrapers, and automated business workflows.",
-    "Today, alongside engineering full-stack applications and automated workflow systems, I run my own web development agency, Katz Web Solutions LLC. At my core, I am a technologist driven to stay at the frontier of innovation, leveraging cutting-edge tools to elevate both my professional work and daily life.",
+    "Today, alongside engineering full-stack applications and automated workflow systems for a select few startup companies, I run my own web development agency, Katz Web Solutions LLC, which specializes in the restaurant and food service industry. At my core, I am a technologist driven to stay at the frontier of innovation, leveraging cutting-edge tools to elevate both my professional work and daily life.",
   ],
   interests: [
     {
