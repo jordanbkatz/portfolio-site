@@ -40,7 +40,7 @@ export const experience: ExperienceItem[] = [
   {
     company: "Aether Devs LLC",
     title: "Software Engineer",
-    location: "Remote, CT",
+    location: "Norwalk, CT",
     period: "Jul 2024 - Feb 2026",
     logo: "/images/aether-devs-llc-logo.svg",
     points: [
@@ -52,7 +52,7 @@ export const experience: ExperienceItem[] = [
   {
     company: "Nodus Web Services",
     title: "Software Developer",
-    location: "Remote, CT",
+    location: "Norwalk, CT",
     period: "Oct 2023 - Jun 2024",
     logo: "/images/nodus-web-services-logo.svg",
     points: [
