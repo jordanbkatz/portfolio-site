@@ -1,4 +1,4 @@
-import { Cloud, Cpu, Layout, Server } from "lucide-react";
+import { Cloud, Layout, Server, TrendingUp } from "lucide-react";
 import { skills } from "../data/content";
 import { Reveal } from "./Reveal";
 import { Section } from "./Section";
@@ -8,7 +8,7 @@ const ICONS: Record<string, typeof Layout> = {
   Frontend: Layout,
   Backend: Server,
   Deployment: Cloud,
-  Automation: Cpu,
+  Sales: TrendingUp,
 };
 
 export function Skills() {

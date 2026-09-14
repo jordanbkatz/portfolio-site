@@ -8,6 +8,8 @@ import {
   CloudCog,
   Database,
   Globe,
+  Linkedin,
+  Mic,
   Radio,
   Send,
   Workflow,
@@ -15,6 +17,7 @@ import {
 } from "lucide-react";
 import {
   SiAngular,
+  SiCalendly,
   SiCloudflare,
   SiDocker,
   SiExpress,
@@ -24,6 +27,7 @@ import {
   SiGithub,
   SiGitlab,
   SiGraphql,
+  SiHubspot,
   SiJavascript,
   SiJest,
   SiKubernetes,
@@ -76,6 +80,31 @@ function SvelteLogo({ size = 13, style }: { size?: number; style?: CSSProperties
   );
 }
 
+function ApolloLogo({ size = 13, style, className }: { size?: number; style?: CSSProperties; className?: string }) {
+  const angles = [0, 45, 90, 135, 180, 225, 270, 315];
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 100 100"
+      fill="currentColor"
+      style={style}
+      className={className}
+      aria-hidden
+    >
+      <g fill="currentColor">
+        {angles.map((angle) => (
+          <path
+            key={angle}
+            transform={`rotate(${angle} 50 50)`}
+            d="M 45.2 6 L 54.5 7.8 C 53.6 21 53.1 31.5 52.6 39.8 C 52.1 44.8 47.6 47.5 42.6 48 L 36.8 48.5 L 36.3 43 L 42.2 42.5 C 45.2 42 46.7 39 47 35 L 45.2 6 Z"
+          />
+        ))}
+      </g>
+    </svg>
+  );
+}
+
 interface IconConfig {
   icon: ComponentType<{ size?: number; style?: CSSProperties; className?: string }>;
   color: string;
@@ -83,7 +112,13 @@ interface IconConfig {
 
 const ICONS: Record<string, IconConfig> = {
   smartlead: { icon: Send, color: "#6366F1" },
+  instantly: { icon: Zap, color: "#0066FF" },
   mailchimp: { icon: SiMailchimp, color: "#FFE01B" },
+  vapi: { icon: Mic, color: "#10B981" },
+  apollo: { icon: ApolloLogo, color: "#FACC15" },
+  linkedin: { icon: Linkedin, color: "#0A66C2" },
+  hubspot: { icon: SiHubspot, color: "#FF7A59" },
+  calendly: { icon: SiCalendly, color: "#006BFF" },
   chrome: { icon: Chrome, color: "#4285F4" },
   webhooks: { icon: Radio, color: "#EC4899" },
   scraping: { icon: Globe, color: "#10B981" },

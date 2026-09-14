@@ -290,7 +290,7 @@ export const about = {
   headshot: "/images/headshot.jpg",
   paragraphs: [
     "My journey began while I was attending Staples High School, driven by a deep curiosity for building systems and solving real-world problems. When I was starting out, I was fully self-taught and highly ambitious, teaching myself how to read documentation to master new tools and technologies on demand. Some of my earliest projects included building an automated forex trading bot in MQL4, creating a meme-based social media platform using PHP and MySQL, and engineering a professional sports game outcome prediction model using PyTorch.",
-    "Those early projects sparked a lifelong passion for software and automation engineering across every layer of the stack; from responsive frontend architectures and interactive UI platforms to high-performance microservices, automated data pipelines, custom web scrapers, and automated business workflows.",
+    "Those formative experiences evolved into a relentless passion for building and scaling. I expanded from software engineering into full-cycle sales development and entrepreneurship, combining modern full-stack development with targeted B2B outbound campaigns, automated pipeline infrastructure, and high-impact customer acquisition strategies to build sustainable, revenue-generating systems from the ground up.",
     "Today, alongside engineering full-stack applications and driving sales development workflows for fast-growing companies, I run my own agency, Katz Web Solutions LLC, providing custom web-based software solutions. At my core, I am a builder and sales strategist driven to stay at the frontier of innovation, leveraging cutting-edge tools to elevate both my professional work and daily life.",
   ],
   interests: [
@@ -356,7 +356,7 @@ export const skills: { category: string; items: Skill[] }[] = [
       { name: "Node.js", icon: "node", url: "https://nodejs.org" },
       { name: "Express.js", icon: "express", url: "https://expressjs.com" },
       { name: "Flutter", icon: "flutter", url: "https://flutter.dev" },
-      { name: "REST APIs", icon: "rest", url: "https://en.wikipedia.org/wiki/REST" },
+      { name: "n8n", icon: "n8n", url: "https://n8n.io" },
       { name: "GraphQL", icon: "graphql", url: "https://graphql.org" },
       { name: "Firebase", icon: "firebase", url: "https://firebase.google.com" },
       { name: "PostgreSQL", icon: "postgresql", url: "https://www.postgresql.org" },
@@ -379,17 +379,16 @@ export const skills: { category: string; items: Skill[] }[] = [
     ],
   },
   {
-    category: "Automation",
+    category: "Sales",
     items: [
-      { name: "n8n", icon: "n8n", url: "https://n8n.io" },
-      { name: "Zapier", icon: "zapier", url: "https://zapier.com" },
-      { name: "Python", icon: "python", url: "https://www.python.org" },
-      { name: "Puppeteer", icon: "puppeteer", url: "https://pptr.dev" },
-      { name: "Cron Jobs", icon: "cron", url: "https://en.wikipedia.org/wiki/Cron" },
-      { name: "Webhooks", icon: "webhooks", url: "https://en.wikipedia.org/wiki/Webhook" },
-      { name: "Web Scraping", icon: "scraping", url: "https://en.wikipedia.org/wiki/Web_scraping" },
-      { name: "Mailchimp", icon: "mailchimp", url: "https://mailchimp.com" },
       { name: "Smartlead", icon: "smartlead", url: "https://smartlead.ai" },
+      { name: "Instantly", icon: "instantly", url: "https://instantly.ai" },
+      { name: "Mailchimp", icon: "mailchimp", url: "https://mailchimp.com" },
+      { name: "Vapi", icon: "vapi", url: "https://vapi.ai" },
+      { name: "Apollo", icon: "apollo", url: "https://apollo.io" },
+      { name: "Linkedin Sales Navigator", icon: "linkedin", url: "https://business.linkedin.com/sales-solutions/sales-navigator" },
+      { name: "Hubspot", icon: "hubspot", url: "https://hubspot.com" },
+      { name: "Calendly", icon: "calendly", url: "https://calendly.com" },
     ],
   },
 ];
