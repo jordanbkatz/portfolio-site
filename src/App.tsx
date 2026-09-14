@@ -4,7 +4,7 @@ import { Hero } from "./components/Hero";
 import { About } from "./components/About";
 import { Experience } from "./components/Experience";
 import { Business } from "./components/Business";
-import { Automation } from "./components/Automation";
+import { Sales } from "./components/Automation";
 import { Projects } from "./components/Projects";
 import { Skills } from "./components/Skills";
 import { Contact } from "./components/Contact";
@@ -22,7 +22,7 @@ export default function App() {
         <Experience />
         <Projects />
         <Business />
-        <Automation />
+        <Sales />
         <Skills />
         <About />
         <Contact />

@@ -5,7 +5,7 @@ const FOOTER_NAV = [
   { href: "#experience", label: "Experience" },
   { href: "#projects", label: "Projects" },
   { href: "#business", label: "Agency" },
-  { href: "#automation", label: "Automation" },
+  { href: "#sales", label: "Sales" },
   { href: "#skills", label: "Tools" },
   { href: "#about", label: "About" },
   { href: "#contact", label: "Contact" },
@@ -34,8 +34,8 @@ export function Footer() {
               Jordan Katz<span className="accent">.</span>
             </a>
             <p>
-              Software & automation engineer, founder of Katz Web Solutions LLC, and builder of
-              high-performance digital platforms and intelligent automated workflows.
+              Software & sales development specialist, founder of Katz Web Solutions LLC, and builder of
+              high-performance digital platforms and revenue-generating sales pipelines.
             </p>
             <div className="footer-socials">
               <a href={profile.github} target="_blank" rel="noreferrer" aria-label="GitHub">

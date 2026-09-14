@@ -1,9 +1,9 @@
-import { Briefcase, ExternalLink, Megaphone, Workflow } from "lucide-react";
+import { Briefcase, Code, ExternalLink, Megaphone, Workflow } from "lucide-react";
 import { business } from "../data/content";
 import { Reveal } from "./Reveal";
 import { Section } from "./Section";
 
-const ICONS = [Megaphone, Briefcase, Workflow];
+const ICONS = [Code, Megaphone, Workflow];
 
 export function Business() {
   return (

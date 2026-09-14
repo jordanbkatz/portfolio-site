@@ -1,37 +1,41 @@
 import {
-  Bot,
   CheckCircle2,
   Database,
-  Layers,
+  Mail,
+  PhoneCall,
   Send,
+  Target,
+  TrendingUp,
   Workflow,
   Zap,
 } from "lucide-react";
 import type { ComponentType } from "react";
-import { automation } from "../data/content";
+import { sales } from "../data/content";
 import { Reveal } from "./Reveal";
 import { Section } from "./Section";
 
 const ICON_MAP: Record<string, ComponentType<{ size?: number; className?: string }>> = {
+  target: Target,
+  outreach: Send,
+  phone: PhoneCall,
+  mail: Mail,
+  pipeline: TrendingUp,
   database: Database,
   workflow: Workflow,
-  email: Send,
-  extension: Layers,
-  bot: Bot,
   zap: Zap,
 };
 
-export function Automation() {
+export function Sales() {
   return (
     <Section
-      id="automation"
-      kicker="Automation"
-      title={automation.heading}
-      sub={automation.sub}
+      id="sales"
+      kicker="Sales Development"
+      title={sales.heading}
+      sub={sales.sub}
     >
       <div className="automation-grid">
-        {automation.capabilities.map((item) => {
-          const Icon = ICON_MAP[item.icon] ?? Workflow;
+        {sales.capabilities.map((item) => {
+          const Icon = ICON_MAP[item.icon] ?? Target;
           return (
             <Reveal key={item.title}>
               <div className="card automation-card">
@@ -62,3 +66,6 @@ export function Automation() {
     </Section>
   );
 }
+
+export const Automation = Sales;
+

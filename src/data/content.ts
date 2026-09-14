@@ -2,7 +2,7 @@ import type React from "react";
 
 export const profile = {
   name: "Jordan Katz",
-  role: "Software & Automation Engineer",
+  role: "Software & Sales Development Specialist",
   location: "Westport, CT",
   email: "me@jordankatz.dev",
   phone: "(203) 917-5930",
@@ -10,7 +10,7 @@ export const profile = {
   github: "https://github.com/jordanbkatz",
   linkedin: "https://linkedin.com/in/jordan-b-katz",
   tagline:
-    "Building full-stack web applications, resilient automation systems, and leveraging frontier technologies to keep businesses ahead of the curve.",
+    "Building modern full-stack web applications, executing targeted B2B sales development campaigns, and driving customer acquisition.",
 };
 
 export interface ExperienceItem {
@@ -32,9 +32,9 @@ export const experience: ExperienceItem[] = [
     current: true,
     logo: "/images/katz-web-solutions-logo.png",
     points: [
-      "Founded a web development agency specializing in building modern, responsive websites for small businesses.",
-      "Managed client outreach through cold outreach campaigns, securing contracts with restaurants and other local businesses to enhance their online presence.",
-      "Engineered automated business workflows, reducing manual administrative tasks and streamlining client management processes.",
+      "Founded a web service agency delivering custom web-based software solutions and modern websites for growing businesses.",
+      "Spearheaded B2B client acquisition via targeted cold outreach and lead generation campaigns, securing client contracts and managing the full sales cycle.",
+      "Engineered automated business workflows and client management systems to streamline operations and project delivery.",
     ],
   },
   {
@@ -70,19 +70,19 @@ export const business = {
   since: "August 2024",
   heading: "My own agency, built from the ground up.",
   description:
-    "Katz Web Solutions LLC is a web development agency I founded and continue to grow. While our primary focus is currently serving the restaurant and food service industry with website development and ongoing management, we are actively planning to branch out into new industries and explore expanded business models beyond our standard website management structure.",
+    "Katz Web Solutions LLC is a web service agency I founded to deliver high-performance web-based software solutions for businesses. We engineer custom web applications, responsive websites, and integrated digital tools designed to solve real business challenges, enhance digital presence, and drive measurable growth.",
   points: [
     {
+      title: "Web-based software solutions",
+      body: "From custom web applications to high-performance responsive websites, every solution is hand-engineered with clean code, modern architecture, and intuitive user experiences.",
+    },
+    {
       title: "Client acquisition",
-      body: "Built a client pipeline from scratch through cold outreach campaigns, landing contracts with restaurants and other local businesses.",
+      body: "Built and scaled the agency's client pipeline from scratch through targeted B2B cold outreach, lead qualification, and strategic relationship management.",
     },
     {
-      title: "Modern, responsive builds",
-      body: "Every site is hand-engineered to be fast, accessible, and beautiful on every device, with no page-builder templates.",
-    },
-    {
-      title: "Automated operations",
-      body: "Engineered automated business workflows that cut manual administrative work and streamline client management end-to-end.",
+      title: "Streamlined operations",
+      body: "Engineered automated business workflows and client management systems that eliminate administrative overhead and keep delivery fast and reliable.",
     },
   ],
 };
@@ -227,7 +227,7 @@ export const projects: Project[] = [
   },
 ];
 
-export interface AutomationFeature {
+export interface SalesFeature {
   title: string;
   category: string;
   tagline: string;
@@ -236,60 +236,62 @@ export interface AutomationFeature {
   points: string[];
 }
 
-export const automation = {
-  heading: "Engineered for Efficiency",
-  sub: "Designing robust systems that eliminate manual bottlenecks, aggregate critical data, and drive business growth autonomously.",
+export const sales = {
+  heading: "Accelerating Customer Acquisition",
+  sub: "Executing data-driven B2B lead generation, multi-channel outbound outreach, and full-cycle pipeline management to acquire high-value customers.",
   capabilities: [
     {
-      title: "Web Scraping & Lead Generation",
+      title: "ICP Targeting & Lead Sourcing",
       category: "",
       tagline: "",
       description:
-        "Engineered end-to-end web scraping architectures and automated extraction pipelines purpose-built for business intelligence and lead generation. From scheduled crawlers that ingest unstructured web data into clean databases to custom tools and browser extensions that crawl target website lists to automatically extract verified contact details and lead metadata.",
-      icon: "database",
+        "Identifying high-value Ideal Customer Profiles (ICPs) and sourcing verified decision-maker contact data. Combining online intelligence databases with custom scraping automation workflows to build clean, qualified prospect lists ready for conversion.",
+      icon: "target",
       points: [
-        "Automated extraction of high-intent market and lead data into structured databases or spreadsheet platforms",
-        "Scheduled crawler syncs, webhook dispatching, and automated lead enrichment data pipelines",
-        "Resilient browser automation architectures featuring dynamic DOM parsing, proxy rotation, and anti-bot evasions",
+        "ICP definition, market segmentation, and hyper-targeted lead list curation",
+        "Automated lead sourcing & contact enrichment using B2B databases and custom scrapers",
+        "Thorough lead qualification and email verification to ensure high deliverability and response rates",
       ],
     },
     {
-      title: "Custom Business & Operational Workflows",
+      title: "Multi-Channel Cold Outreach",
       category: "",
       tagline: "",
       description:
-        "Designing custom automated back-office workflows that eliminate tedious, repetitive manual tasks so teams can focus on high-impact strategic work. Handling end-to-end client onboarding, automated invoice generation, document parsing, asynchronous event handling, and instant system notifications.",
-      icon: "zap",
+        "Executing multi-touch outbound campaigns across cold email and cold calling to spark meaningful conversations. Leveraging high-deliverability email infrastructure and strategic phone outreach with tailored messaging that converts cold prospects into booked discovery calls.",
+      icon: "outreach",
       points: [
-        "Custom automated workflows that eliminate recurring administrative overhead and human error",
-        "Automated client onboarding, dynamic contract generation, and scheduled billing routines",
-        "Multi-branch event routing, asynchronous queue management, and automated error recovery alerts",
+        "Multi-inbox cold email architecture, inbox rotation, and deliverability monitoring",
+        "Direct cold calling campaigns targeting key decision-makers with compelling value propositions",
+        "Personalized copy frameworks, objection-handling strategies, and continuous A/B test optimization",
       ],
     },
     {
-      title: "Outreach & Communication Systems",
+      title: "Pipeline, CRM & Deal Execution",
       category: "",
       tagline: "",
       description:
-        "Developing scalable outbound and customer engagement engines that automate outreach, capture leads from form submissions, and maintain clean bi-directional sync with CRMs. Specializing in high-deliverability cold email campaign infrastructure, automated marketing newsletters, and real-time response routing.",
-      icon: "email",
+        "Managing the sales pipeline from initial touch to deal completion. Keeping CRM data structured and actionable, driving appointment setting for discovery calls, qualifying prospect requirements, and assisting with closing when necessary.",
+      icon: "pipeline",
       points: [
-        "Multi-inbox cold email campaign architecture, automated warmup, and deliverability monitoring",
-        "Automated inbound lead capture, instant form submission triggers, and audience segmentation",
-        "Real-time bi-directional customer sync and pipeline updates across leading CRM platforms",
+        "End-to-end CRM management, stage tracking, and seamless pipeline hygiene",
+        "Frictionless appointment setting and calendar booking for qualified opportunities",
+        "Prospect qualification, pipeline nurturing, and closing support across the deal cycle",
       ],
     },
   ],
 };
 
+export const automation = sales;
+
 export const about = {
   heading: "My Story",
-  sub: "Software & automation engineer, agency founder, and builder of modern digital products.",
+  sub: "Software & sales development specialist, agency founder, and builder of modern digital products.",
   headshot: "/images/headshot.jpg",
   paragraphs: [
     "My journey began while I was attending Staples High School, driven by a deep curiosity for building systems and solving real-world problems. When I was starting out, I was fully self-taught and highly ambitious, teaching myself how to read documentation to master new tools and technologies on demand. Some of my earliest projects included building an automated forex trading bot in MQL4, creating a meme-based social media platform using PHP and MySQL, and engineering a professional sports game outcome prediction model using PyTorch.",
     "Those early projects sparked a lifelong passion for software and automation engineering across every layer of the stack; from responsive frontend architectures and interactive UI platforms to high-performance microservices, automated data pipelines, custom web scrapers, and automated business workflows.",
-    "Today, alongside engineering full-stack applications and automated workflow systems for a select few startup companies, I run my own web development agency, Katz Web Solutions LLC, which currently specializes in the restaurant and food service industry. At my core, I am a technologist driven to stay at the frontier of innovation, leveraging cutting-edge tools to elevate both my professional work and daily life.",
+    "Today, alongside engineering full-stack applications and driving sales development workflows for fast-growing companies, I run my own agency, Katz Web Solutions LLC, providing custom web-based software solutions. At my core, I am a builder and sales strategist driven to stay at the frontier of innovation, leveraging cutting-edge tools to elevate both my professional work and daily life.",
   ],
   interests: [
     {

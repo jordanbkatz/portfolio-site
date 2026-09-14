@@ -58,7 +58,7 @@ export function About() {
             />
             <div className="photo-badge">
               <span className="badge-title">Jordan Katz</span>
-              <span className="badge-sub">Software & Automation Engineer</span>
+              <span className="badge-sub">Software & Sales Development Specialist</span>
             </div>
           </div>
         </Reveal>
